@@ -8,7 +8,7 @@
 
       <section class="row">
           <div class="col-md-3 my-3" v-for="house in housesInAppState" :key="house.id">
-              <HouseCard :houseProp="car" />
+              <HouseCard :houseProp="house" />
           </div>
       </section>
 

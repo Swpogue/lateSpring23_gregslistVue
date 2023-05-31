@@ -1,6 +1,7 @@
 import { AppState } from "../AppState.js"
 import { House } from "../models/House.js"
 import { logger } from "../utils/Logger.js"
+import Pop from "../utils/Pop.js"
 import { api } from "./AxiosService.js"
 
 class HousesService {
@@ -26,6 +27,7 @@ class HousesService {
     }
 
     async deleteHouse(houseId) {
+        
         const res = await api.delete(`api/houses/${houseId}`)
         logger.log('[DELETING house]', res.data)
         AppState.houses = AppState.houses.filter(h => h.id != houseId)

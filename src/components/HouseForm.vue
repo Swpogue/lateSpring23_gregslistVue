@@ -8,20 +8,24 @@
       <form @submit="submitHouseForm()">
           <div class="modal-body" name="modal-body">
               <div class="mb-3">
-                  <label for="bedrooms" class="form-label">bedrooms</label>
-                  <input type="text" v-model="editable.bedrooms" required class="form-control" id="bedrooms">
-              </div>
-              <div class="mb-3">
-                  <label for="floors" class="form-label">floors</label>
-                  <input type="text" v-floors="editable.floors" required class="form-control" id="floors">
+                  <label for="bedrooms" class="form-label">Bedrooms</label>
+                  <input type="number" v-model="editable.bedrooms" required class="form-control" id="bedrooms">
               </div>
               <div class="mb-3">
                   <label for="year" class="form-label">Year</label>
                   <input type="number" v-model="editable.year" min="1980" required class="form-control" id="year">
               </div>
               <div class="mb-3">
+                  <label for="levels" class="form-label">Levels</label>
+                  <input type="number" v-model="editable.levels" min="1" required class="form-control" id="levels">
+              </div>
+              <div class="mb-3">
+                  <label for="bathrooms" class="form-label">bathrooms</label>
+                  <input type="number" v-model="editable.bathrooms" min="1" required class="form-control" id="bathrooms">
+              </div>
+              <div class="mb-3">
                   <label for="price" class="form-label">Price</label>
-                  <input type="number" v-model="editable.price" min="5" required class="form-control" id="price">
+                  <input type="number" v-model="editable.price" min="2000" required class="form-control" id="price">
               </div>
               <div class="mb-3">
                   <label for="description" class="form-label">Description</label>
@@ -46,7 +50,6 @@ import { ref } from 'vue';
 import { logger } from '../utils/Logger.js';
 import Pop from '../utils/Pop.js';
 import { housesService } from '../services/HousesService.js';
-// import bootstrap from 'bootstrap';
 import { Modal } from 'bootstrap'
 export default {
   setup() {
@@ -57,7 +60,7 @@ export default {
 
           async submitHouseForm() {
               try {
-                  logger.log('submitting the house form')
+                //   logger.log('submitting the house form')
                   // NOTE we must send the editable.value to 'strip' the proxy layer 
                   const formData = editable.value
                   window.event.preventDefault()

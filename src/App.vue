@@ -14,6 +14,9 @@
   <Modal id="create-car">
     <CarForm />
   </Modal>
+  <Modal id="create-house">
+    <HouseForm />
+  </Modal>
 </template>
 
 <script>
@@ -22,6 +25,7 @@ import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
 import Modal from './components/Modal.vue'
 import CarForm from './components/CarForm.vue'
+import HouseForm from "./components/HouseForm.vue"
 
 export default {
   setup() {
@@ -29,7 +33,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar, Modal, CarForm }
+  components: { Navbar, Modal, CarForm, HouseForm }
 }
 </script>
 <style lang="scss">

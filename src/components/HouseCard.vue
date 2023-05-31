@@ -5,8 +5,10 @@
       </router-link>
       <div class="p-2">
           <h1>{{ houseProp?.model }}</h1>
-          <div class="d-flex justify-content-between align-items-center">
-              <p>{{ houseProp?.price }}</p>
+          <div class="justify-content-between align-items-center">
+              <p>Price: {{ houseProp?.price }}</p>
+              <p>Bedrooms: {{ houseProp?.bedrooms }}</p>
+              <p>{{ houseProp?.description }}</p>
               <img class="creator-img" :src="houseProp?.creator.picture" alt="">
           </div>
           <div class="text-end py-2">
